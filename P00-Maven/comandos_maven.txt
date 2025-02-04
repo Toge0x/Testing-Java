@@ -1,0 +1,100 @@
+MVN COMPILE
+
+mintyy@ubuntu:~/Escritorio/Universidad/2º Cuatrimestre/PPSS - Planificación y Pruebas de Si
+stemas Software/ppss-2025-G8-martinez-santa/P00-Maven/P00-maven1$ mvn compile
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< practica1.ppss:P00-maven1 >----------------------
+[INFO] Building P00-maven1 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ P00-maven1 ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ P00-maven1 ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug release 21] to target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.479 s
+[INFO] Finished at: 2025-02-04T18:15:31+01:00
+[INFO] ------------------------------------------------------------------------
+
+MVN CLEAN
+
+mintyy@ubuntu:~/Escritorio/Universidad/2º Cuatrimestre/PPSS - Planificación y Pruebas de Si
+stemas Software/ppss-2025-G8-martinez-santa/P00-Maven/P00-maven1$ mvn clean
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< practica1.ppss:P00-maven1 >----------------------
+[INFO] Building P00-maven1 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ P00-maven1 ---
+[INFO] Deleting /home/mintyy/Escritorio/Universidad/2º Cuatrimestre/PPSS - Planificación y Pruebas de Sistemas Software/ppss-2025-G8-martinez-santa/P00-Maven/P00-maven1/target
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  0.123 s
+[INFO] Finished at: 2025-02-04T18:15:58+01:00
+[INFO] ------------------------------------------------------------------------
+
+MVN TEST
+
+mintyy@ubuntu:~/Escritorio/Universidad/2º Cuatrimestre/PPSS - Planificación y Pruebas de Si
+stemas Software/ppss-2025-G8-martinez-santa/P00-Maven/P00-maven1$ mvn test
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< practica1.ppss:P00-maven1 >----------------------
+[INFO] Building P00-maven1 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ P00-maven1 ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ P00-maven1 ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 2 source files with javac [debug release 21] to target/classes
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ P00-maven1 ---
+[INFO] skip non existing resourceDirectory /home/mintyy/Escritorio/Universidad/2º Cuatrimestre/PPSS - Planificación y Pruebas de Sistemas Software/ppss-2025-G8-martinez-santa/P00-Maven/P00-maven1/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ P00-maven1 ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 2 source files with javac [debug release 21] to target/test-classes
+[INFO] 
+[INFO] --- surefire:3.5.2:test (default-test) @ P00-maven1 ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] ├─ Tests para la clase Triangulo - 0.024 s
+[INFO] │  ├─ ✔ C3_tipo_triangulo_should_be_Isosceles_when_last_two_sides_are_equals - 0.010 s
+[INFO] │  ├─ ✔ C1_tipo_triangulo_should_be_Equilatero_when_three_sides_are_equals - 0.001 s
+[INFO] │  ├─ ✔ C2_tipo_triangulo_should_be_No_triangulo_when_sum_of_a_and_b_is_lower_than_c - 0.001 s
+[INFO] │  ├─ ✔ C4_tipo_triangulo_should_be_Escaleno_when_three_sides_are_different - 0.001 s
+[INFO] │  └─ ✔ C5_tipo_triangulo_should_be_Isosceles_when_first_two_sides_are_equals - 0 s
+[INFO] ├─ Tests para la clase Matricula - 0.008 s
+[INFO] │  ├─ ✔ C7_calculaTasaMatricula_should_return_250_when_edad_40_and_fNumerosa_and_not_repetidor - 0.001 s
+[INFO] │  ├─ ✔ Test con edad=23 - 0.001 s
+[INFO] │  ├─ ✔ C6_calculaTasaMatricula_should_return_250_when_edads_70_and_fNumerosa_and_repetidor - 0.001 s
+[INFO] │  ├─ ✔ C5_calculaTasaMatricula_should_return_400_when_edad_60_and_fNumerosa_and_repetidor - 0.001 s
+[INFO] │  ├─ ✔ C4_calculaTasaMatricula_should_return_250_when_edad_40_and_fNumerosa_and_repetidor - 0.001 s
+[INFO] │  ├─ ✔ C2_calculaTasaMatricula_should_return_250_when_edad_23_and_fNumerosa_and_not_repetidor - 0 s
+[INFO] │  └─ ✔ C3_calculaTasaMatricula_should_return_2000_when_edad_23_and_not_fNumerosa_and_repetidor - 0.001 s
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.022 s
+[INFO] Finished at: 2025-02-04T18:16:12+01:00
+[INFO] ------------------------------------------------------------------------

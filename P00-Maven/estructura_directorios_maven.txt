@@ -1,0 +1,29 @@
+.
+├── pom.xml		archivo de configuración de maven
+└── src			almacena TODO el código fuente
+    ├── main		almacena el código fuente principal del proyecto
+    │   ├── java		almacena el código fuente del proyecto en lenguaje Java
+    │   │   └── paquete1		paquete que contiene las clases del proyecto
+    │   │       ├── Matricula.java
+    │   │       └── Triangulo.java
+    │   └── resources		almacena archivos de configuración, plantillas, recursos compartidos, etc...
+    └── test		almacena todas las pruebas unitarias del proyecto
+        └── java		almacena el código fuente de las pruebas unitarias en lenguaje Java
+            └── paquete1		paquete que contiene las clases de las pruebas unitarias
+                ├── MatriculaTest.java
+                └── TrianguloTest.java
+
+.
+├── pom.xml
+└── src
+    ├── main
+    │   ├── java
+    │   │   └── paquete2
+    │   │       ├── Matricula.java
+    │   │       └── Triangulo.java
+    │   └── resources
+    └── test
+        └── java
+            └── paquete2
+                ├── MatriculaTest.java
+                └── TrianguloTest.java

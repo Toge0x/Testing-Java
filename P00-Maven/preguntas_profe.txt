@@ -1,0 +1,3 @@
+- ¿Están bien los ejercicios?
+- ¿Se debía de hacer el comandos_maven.txt sobre el P00-maven2?
+- En caso de que sí, ¿hay test que están hechos mal a propósito para corregirlos?

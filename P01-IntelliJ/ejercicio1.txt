@@ -1,0 +1,62 @@
+¿Cuál es el resultado de la construcción del proyecto y por qué da ese resultado?
+- Da BUILD SUCCESS porque el código fuente de Ejemplo.java no tiene errores de sintaxis y maven-compiler-plugin está usando el por defecto.
+
+¿Por qué no aparecen los plugins correspondientes en el fichero pom.xml de nuestro proyecto?
+- estas son las goals que se ejecutan:
+[INFO] --- resources:3.3.1:resources (default-resources) @ simpleMavenProject ---
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ simpleMavenProject ---
+
+Estado del pom.xml:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ppss.P01</groupId>
+    <artifactId>simpleMavenProject</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+</project>
+
+No aparecen los plugins porque utiliza los plugins por defecto (los de la última versión)
+
+¿Cómo podemos sabe cuál es su configuración "efectiva", es decir la resultante de "combinar" la
+configuración que heredamos más la que nosotros hemos configurado?
+- Ejecutando el comando mvn help:effective-pom
+
+También puedes comprobar que el plugin tiene dos goals, que hacen cosas diferentes y están asociadas a fases diferentes!! ¿cuáles son esas goals?
+- son compiler:compile y compiler:testCompile
+
+¿Qué goals se ejecutan al ejecutar mvn package y mvn install?
+- mvn package:
+	[INFO] --- resources:3.3.1:resources (default-resources) @ simpleMavenProject ---
+	[INFO] --- compiler:3.13.0:compile (default-compile) @ simpleMavenProject ---
+	[INFO] --- resources:3.3.1:testResources (default-testResources) @ simpleMavenProject ---
+	[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ simpleMavenProject ---
+	[INFO] --- surefire:3.2.5:test (default-test) @ simpleMavenProject ---
+	[INFO] --- jar:3.4.1:jar (default-jar) @ simpleMavenProject ---
+
+- mvn install:
+	[INFO] --- resources:3.3.1:resources (default-resources) @ simpleMavenProject ---
+	[INFO] --- compiler:3.13.0:compile (default-compile) @ simpleMavenProject ---
+	[INFO] --- resources:3.3.1:testResources (default-testResources) @ simpleMavenProject ---
+	[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ simpleMavenProject ---
+	[INFO] --- surefire:3.2.5:test (default-test) @ simpleMavenProject ---
+	[INFO] --- jar:3.4.1:jar (default-jar) @ simpleMavenProject ---
+	[INFO] --- install:3.1.2:install (default-install) @ simpleMavenProject ---
+	
+lo mismo que en mvn package pero con la goal install porque está por debajo de la goal package
+
+¿Para qué nos puede servir que el empaquetado de nuestro proyecto esté almacenado en nuestro
+repositorio local Maven?
+- Para evitar recompilar el proyecto y facilitar la integración con otros proyectos

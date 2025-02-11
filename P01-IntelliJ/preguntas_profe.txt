@@ -1,0 +1,1 @@
+Al utilizar el maven para automatizar las pruebas con los comandos he tenido que utilizar compiler:testCompile, ¿afecta en algo?, me pasaba un problema que es que mvn compiler:testCompile solo no podía usarlo porque no encontraba el simbolo pero si ejecutaba mvn test si que iba perfectamente

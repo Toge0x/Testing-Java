@@ -1,4 +1,4 @@
-package ppss;
+package ppss.P01;
 
 public class Ejemplo {
 

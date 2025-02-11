@@ -1,0 +1,133 @@
+EJERCICIO 3:
+
+- Comportamientos que pertenecen al conjunto S:
+	(1) Un año divisible entre 4 pero no entre 100 será fechaValida(29, 2, 2024) = true
+	(2) Un año divisible entre 100 pero no entre 400 será fechaValida(28, 2, 2025) = false
+	(3) Un año divisible entre 400 directamente será fechaValida(1, 1, 2000) = true
+
+- Comportamientos que pertenecen al conjunto P:	
+        (1) fechaValida(29, 2, 2100) = false porque 2100 no es bisiesto
+	(2) fechaValida(30, 4, 2025) = true, cuadra porque abril tiene 30 dias
+	
+- Comportamientos que pertenezcen a T
+   (1) fechaValida(29, 2, 2020) = true cuando es verdaderamente true
+   
+   ------ NO HAY MAS TEST EN EL CÓDIGO DE PRUEBAS (ESTOS SON MIOS) --------
+  
+    (2) @Test
+    void C2_fechaValida_should_be_false_when_date_is_31_4_2020() {  // no tiene 31 dias abril
+        //Preparamos los datos (Arrange)
+        int dia = 31;
+        int mes = 4;
+        int anyo = 2020;
+        boolean resultadoEsperado = false;
+        //Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia,mes,anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    (3) @Test
+    void C3_fechaValida_should_be_false_when_date_is_29_2_2021() {      // 2021 no es bisiesto
+        //Preparamos los datos (Arrange)
+        int dia = 29;
+        int mes = 2;
+        int anyo = 2021;
+        boolean resultadoEsperado = false;
+        //Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia,mes,anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    (4) @Test
+    void C4_fechaValida_should_be_false_when_date_is_29_2_2022() {      // 2022 no es bisiesto
+        //Preparamos los datos (Arrange)
+        int dia = 29;
+        int mes = 2;
+        int anyo = 2022;
+        boolean resultadoEsperado = false;
+        //Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia,mes,anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+    
+    (5) @Test
+    void C5_fechaValida_should_be_true_when_date_is_30_6_2023() {  // junio tiene 30 dias
+        // Preparamos los datos (Arrange)
+        int dia = 30;
+        int mes = 6;
+        int anyo = 2023;
+        boolean resultadoEsperado = true;
+        // Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia, mes, anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    (6) @Test
+    void C6_fechaValida_should_be_false_when_date_is_32_1_2023() {  // enero solo tiene 31 dias
+        // Preparamos los datos (Arrange)
+        int dia = 32;
+        int mes = 1;
+        int anyo = 2023;
+        boolean resultadoEsperado = false;
+        // Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia, mes, anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+    (7) @Test
+    void C7_fechaValida_should_be_false_when_date_is_15_13_2023() {  // no existe el mes 13
+        // Preparamos los datos (Arrange)
+        int dia = 15;
+        int mes = 13;
+        int anyo = 2023;
+        boolean resultadoEsperado = false;
+        // Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia, mes, anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+    
+    (8) @Test
+    void C8_fechaValida_should_be_false_when_date_is_0_5_2023() {  // No existen días menores a 1
+        // Preparamos los datos (Arrange)
+        int dia = 0;
+        int mes = 5;
+        int anyo = 2023;
+        boolean resultadoEsperado = false;
+        // Ejecutamos (Act)
+        boolean resultadoReal = ejemplo.fechaValida(dia, mes, anyo);
+        assertEquals(resultadoEsperado, resultadoReal);
+    }
+
+
+El proceso de AUTOMATIZACIÓN de las pruebas es posterior al proceso de diseño y consiste en:
+	(1) compilar el código de los tests para ver que no hay errores sintácticos y que pueden ser probados con el comando mvn compiler:testCompile
+	(2) ejecucion de los test automatizados con JUNit con el comando mvn test para validar el correcto funcionamiento del codigo
+
+
+En el proyecto Maven simpleMavenProject,
+
+el subproceso (1) de la automatización lo hemos realizado porque:
+	[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ simpleMavenProject ---
+	[INFO] Recompiling the module because of changed dependency.
+	[INFO] Compiling 1 source file with javac [debug target 21] to target/test-classes
+
+el subproceso (2) de la automatización lo hemos realizado porque:
+    	[INFO] --- surefire:3.2.5:test (default-test) @ simpleMavenProject ---
+	[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+	[INFO] 
+	[INFO] -------------------------------------------------------
+	[INFO]  T E S T S
+	[INFO] -------------------------------------------------------
+	[INFO] Running ppss.P01.EjemploTest
+	[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s -- in ppss.P01.EjemploTest
+	[INFO] 
+	[INFO] Results:
+	[INFO] 
+	[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0
+	[INFO] 
+	[INFO] ------------------------------------------------------------------------
+	[INFO] BUILD SUCCESS
+	[INFO] ------------------------------------------------------------------------
+	[INFO] Total time:  1.059 s
+	[INFO] Finished at: 2025-02-11T21:08:14+01:00
+	[INFO] ------------------------------------------------------------------------

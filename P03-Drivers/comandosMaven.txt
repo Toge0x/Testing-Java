@@ -1,0 +1,21 @@
+RUN CONFIGURATIONS:
+
+
+- Run_CineTest_with_html_report: 
+	clean jxr:test-jxr surefire-report:report -Dtest=CineTest
+
+- Run_FicheroTextoTest_sin_excluidos: 
+	clean test -Dtest=FicheroTextoTest
+
+- Run_DataArrayTest: 
+	clean test -Dtest=DataArrayTest
+
+- Run_Parametrizados: 
+	clean test -Dgroups=parametrizado
+
+- Run_Parametrizados_con_excepciones: 
+	clean test -Dgroups=conExcepciones
+
+- Run_todos_with_html_report: 
+	clean jxr:test-jxr surefire-report:report -DexcludedGroups=parametrizado,excluido
+

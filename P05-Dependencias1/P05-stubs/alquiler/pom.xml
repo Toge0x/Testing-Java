@@ -5,8 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ppss.P05</groupId>
-    <artifactId>asignaturas</artifactId>
+    <artifactId>alquiler</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
@@ -15,6 +21,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 
 </project>

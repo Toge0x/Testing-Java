@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="gestorLlamadas" />
         <module name="asignaturas" />
+        <module name="alquiler" />
       </profile>
     </annotationProcessing>
   </component>

@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/gestorLlamadas/pom.xml" />
         <option value="$PROJECT_DIR$/asignaturas/pom.xml" />
         <option value="$PROJECT_DIR$/alquiler/pom.xml" />
+        <option value="$PROJECT_DIR$/reserva/pom.xml" />
       </list>
     </option>
   </component>

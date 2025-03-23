@@ -6,21 +6,20 @@ import java.io.IOException;
 
 public class FicheroTexto {
 
-    // Punto de inyección
-    public FileReader getFileReader(String nombreArchivo) throws FileNotFoundException {
-        return new FileReader(nombreArchivo);
+    public FileReader getFileReader(String nombreFichero) throws FileNotFoundException {
+        return new FileReader(nombreFichero);
     }
 
-    // SUT NO TESTABLE (testable despues de añadir el seam)
+    // SUT NO TESTABLE - Refactorizada a getFileReader
     public int contarCaracteres(String nombreFichero) throws FicheroException {
         int contador = 0;
         FileReader fichero = null;
         try {
-            //fichero = new FileReader(nombreFichero);          // dependencia
+            //fichero = new FileReader(nombreFichero);        // dependencia externa, nunca cambiará de tipo NO TESTABLE
             fichero = getFileReader(nombreFichero);
             int i=0;
             while (i != -1) {
-                i = fichero.read();                             // dependencia
+                i = fichero.read();         // dependencia externa
                 contador++;
             }
             contador--;
@@ -32,7 +31,7 @@ public class FicheroTexto {
                     " (Error al leer el archivo)");
         }
         try {
-            fichero.close();                                // dependencia
+            fichero.close();            // dependencia externa
         } catch (IOException e) {
             throw new FicheroException(nombreFichero +
                     " (Error al cerrar el archivo)");

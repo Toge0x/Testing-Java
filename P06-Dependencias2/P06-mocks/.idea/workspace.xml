@@ -5,9 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d18c1b3-8322-43dd-bd42-a6cc202195f1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fichero/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/notify/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reserva/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fichero/src/main/java/ppss/FicheroException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fichero/src/main/java/ppss/FicheroTexto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fichero/src/test/java/ppss/FicheroTextoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notify/src/main/java/ppss/FailedNotifyException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notify/src/main/java/ppss/MailServer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notify/src/main/java/ppss/NotifyCenter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/notify/src/test/java/ppss/NotifyCenterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/premio/src/main/java/ppss/ClienteWebService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/premio/src/main/java/ppss/ClienteWebServiceException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/premio/src/main/java/ppss/Premio.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/premio/src/test/java/ppss/PremioTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,9 +37,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2uaHa1K43ZH7MHXxw9Q3Nh0wOPD" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -40,6 +53,9 @@
     "JUnit.FicheroTextoTest.C2_contarCaracteres_should_return_exception_error_cerrar_fichero_when_fichero_is_ficheroC2.executor": "Run",
     "JUnit.FicheroTextoTest.executor": "Run",
     "JUnit.NotifyCenterTest.executor": "Run",
+    "JUnit.PremioTest.executor": "Run",
+    "JUnit.ReservaMockTest.executor": "Run",
+    "JUnit.ReservaStubsTest.executor": "Run",
     "Maven.fichero [clean,install].executor": "Run",
     "Maven.fichero [install].executor": "Run",
     "Maven.fichero [test].executor": "Run",
@@ -49,6 +65,7 @@
     "Maven.premio [clean,test].executor": "Run",
     "Maven.premio [install].executor": "Run",
     "Maven.premio [test].executor": "Run",
+    "Maven.reserva [install].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -112,6 +129,7 @@
       <option name="presentableId" value="Default" />
       <updated>1742479826733</updated>
       <workItem from="1742479827796" duration="10802000" />
+      <workItem from="1742666454412" duration="17380000" />
     </task>
     <servers />
   </component>

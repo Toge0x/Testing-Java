@@ -2,6 +2,7 @@ package ppss;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Locale;
 
 public class NotifyCenter {
     private String login = "root";
@@ -19,18 +20,18 @@ public class NotifyCenter {
         return LocalDate.now();
     }
 
-    // SUT
+    // SUT NO TESTABLE - Refactorizar FACTORIA LOCAL AHORA SÍ TESTABLE
     public void notifyUsers(LocalDate fecha) throws FailedNotifyException {
         int failed = 0;
         MailServer server = getServer();        // SEAM
         List<String> emails;
-        //LocalDate today = LocalDate.now();      // dependencia externa - new LocalDate NO TESTABLE
-        LocalDate today = getFecha();               // Ahora sí, testable
+        //LocalDate today = LocalDate.now();      // dependencia externa, new LocalDate, NO SEAM
+        LocalDate today = getFecha();               // SEAM
         if (today.isEqual(fecha)) {
-            emails = server.findMailItemsWithDate(fecha);   // dependencia en SEAM
+            emails = server.findMailItemsWithDate(fecha);   // dependencia externa
             for (String email : emails) {
                 try {
-                    sendNotify(email);                  // Testable, metodo de clase facilmente mockeable
+                    sendNotify(email);
                 } catch (FailedNotifyException ex) {
                     failed++;
                 }

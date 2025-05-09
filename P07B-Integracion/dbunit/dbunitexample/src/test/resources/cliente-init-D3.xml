@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+    <cliente id="1"
+             nombre="John"
+             apellido="Smith"
+             direccion="1 Main Street"
+             ciudad="Anycity" />
+    <cliente id="2"
+             nombre="Jorge"
+             apellido="Perez"
+             direccion="Gran via"
+             ciudad="Madrid" />
+
+</dataset>

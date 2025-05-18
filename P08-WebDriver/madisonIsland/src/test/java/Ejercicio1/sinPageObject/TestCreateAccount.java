@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -43,7 +41,7 @@ public class TestCreateAccount {
         Assertions.assertEquals("Create New Customer Account", driver.getTitle());                  // PASO 5
         driver.findElement(By.id("firstname")).sendKeys("Copito");
         driver.findElement(By.id("lastname")).sendKeys("Linda");
-        driver.findElement(By.id("email_address")).sendKeys("copito1240724@gmail.com");
+        driver.findElement(By.id("email_address")).sendKeys("copitoo240724@gmail.com");
         driver.findElement(By.id("password")).sendKeys("coposdenieve");
         driver.findElement(By.cssSelector("div.buttons-set button[title='Register']")).click();    // PASO 6
         Assertions.assertEquals("This is a required field.", driver.findElement(By.id("advice-required-entry-confirmation")).getText());     // PASO 7

@@ -32,13 +32,14 @@ public class TestLogin {
         driver.quit();
     }
 
+
     @Test
     public void R2_requirement_loginOK_should_login_with_success_when_user_account_exists() {
         Assertions.assertEquals("Madison Island", driver.getTitle());       // PASO 1
         driver.findElement(By.cssSelector("div.account-cart-wrapper a.skip-link.skip-account")).click();
         driver.findElement(By.cssSelector("div#header-account div.links ul a[title='Log In']")).click();   // PASO 2
         Assertions.assertEquals("Customer Login", driver.getTitle());       // PASO 3
-        driver.findElement(By.id("email")).sendKeys("copito1240724@gmail.com");
+        driver.findElement(By.id("email")).sendKeys("copitoo240724@gmail.com");
         driver.findElement(By.id("send2")).click();                         // PASO 4
         Assertions.assertEquals("This is a required field.", driver.findElement(By.id("advice-required-entry-pass")).getText());    // PASO 5
         driver.findElement(By.id("pass")).sendKeys("coposdenieve");
@@ -53,7 +54,7 @@ public class TestLogin {
         driver.findElement(By.cssSelector("div.account-cart-wrapper a.skip-link.skip-account")).click();
         driver.findElement(By.cssSelector("div#header-account div.links ul a[title='Log In']")).click();   // PASO 2
         Assertions.assertEquals("Customer Login", driver.getTitle());       // PASO 3
-        driver.findElement(By.id("email")).sendKeys("copito1240724@gmail.com");
+        driver.findElement(By.id("email")).sendKeys("copitoo240724@gmail.com");
         driver.findElement(By.id("pass")).sendKeys("coposdenieve1");
         driver.findElement(By.id("send2")).click();                         // PASO 4
         Assertions.assertEquals("Invalid login or password.", driver.findElement(By.cssSelector("ul.messages li.error-msg span")).getText());   // PASO 5

@@ -1,3 +1,5 @@
+Ejercicio 1.
+
 C) observa la consola y comprueba que goals se ejecutan
 
 Como ponemos -DskipsIT=true solo se ejecutan tests unitarios.
@@ -76,3 +78,20 @@ Porque no hay ninguna línea donde se llame a countValues en los tests. JaCoCo m
 Porque al depurar el error del data == null se ha introducido 2 vertientes V/F en el if
 por lo que si ocurre la segunda la parte de abajo del else en el while no funciona por eso baja la cobertura.
 Si se elimina el data.length == 0 del if se consigue el 100% de nuevo.
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+Ejercicio 2.
+
+Con respecto al informe de tests unitarios:
+• Justifica el valor de cobertura de branches para la clase ppss.ejercicio2.MyClass.
+Todos los valores son n/a porque no tienen vertientes de decisión V/F por lo que no hay un punto de decisión y no se puede medir su cobertura de ramas.
+
+• Explica por qué el valor de cobertura de branches para la clase ppss.ejercicio2.Lock es del 100%,
+a pesar de que no todos sus métodos tienen también el valor 100%.
+Tiene el 100% precisamente porque aunque haya métodos que no han sido probados no tienen vertiente V/F por lo que no se puede medir su cobertura de ramas.
+
+· Observa también que para la clase ppss.ejercicio2.Lock la cobertura de líneas es del 72,7%
+mientras que la cobertura de branches es del 100% ¿cómo es eso posible?
+Lineas => Missed 3 of 11 => 8 de 11 ejecutadas (72,7%).
+Esto se debe a que no todas las lineas de la clase han sido probadas y esos métodos que no se han probado son exactamente métodos que no tienen ramas de decisión.

@@ -1,0 +1,78 @@
+C) observa la consola y comprueba que goals se ejecutan
+
+Como ponemos -DskipsIT=true solo se ejecutan tests unitarios.
+Las goals que se ejecutan son:
+    1. clean:clean                  --> elimina el directorio target
+    2. jacoco:prepare-agent         --> comienza el analisis de la cobertura
+    3. resources:resources
+    4. compiler:3.13.0:compile      --> copia los resources y compila src/main/java
+    5. resources:testResources
+    6. surefire:3.5.2:testCompile   --> ejecuta los test unitarios (solo la clase Test_Sample_maxValue)
+    7. jar:jar                      --> crea el .jar
+    8. failsafe:integration-test
+    9. failsafe:verify              --> se skipean por -DskipITs=true
+    10. jacoco:report               --> genera el informe HTML y XML a partir del jacoco.exec
+    11. jacoco:check                --> verifica que se supera el umbral
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+D) Visualiza en el navegador el informe cobertura generado por JaCoCo. Puedes abrir directamente el fichero index.html del informe
+
+• ¿Cuántos y qué informes de cobertura se han generado teniendo en cuenta que en el pom hemos indicado que se deben generar dos tipos de informes?
+Solo se generaron los informes de test unitarios porque en la run configuration skipeamos los test de integración.
+
+• ¿Cual es el número de instrucciones bytecode ejecutadas para la clase Sample?
+Missed Instructions --> 84 of 117 => 117 - 84 = 33 instrucciones ejecutadas.
+
+• ¿Cuántas instrucciones bytecode nos faltan para tener una cobertura del 100% de instrucciones bytecode para la clase Sample?
+Missed Instructions: 84. Faltan 84 instrucciones para tener un 100% de cobertura.
+
+• ¿Cuántas instrucciones bytecode tiene la clase Sample?
+Tiene 117 instrucciones bytecode.
+
+• En el informe verás el método Sample(), sin embargo no lo hemos implementado en el código que se os ha proporcionado. ¿Por qué aparece entonces en el informe?
+Porque como no se ha definido un constructor para la clase Sample ha sido creado el constructor por defecto que forma parte del bytecode.
+
+• El método Sample() tiene una cobertura de branches con valor "n/a". ("n/a" signiQica "not applicable"). Razona por qué tiene dicho valor.
+Porque no contiene ninguna decisión que tomar y JaCoCo evalúa el branch coverage (puntos de decisión en rama).
+
+• Indica cuál es el valor de complejidad ciclomática para el método Sample.maxValue() y
+justifica, teniendo en cuenta el código del método y la fórmula que usa JaCoCo, por qué tiene
+ese valor, (debes indicar qué líneas de código se asocian a los valores calculados por la fórmula de JaCoCo.
+El valor de la complejidad ciclomática es 4 porque lo pone en la columna Cxty.
+Tiene ese valor porque tiene 3 puntos de decisión + 1 = 4 => el if, el for y el if = 3 decission points + 1
+
+• Indica qué representa el valor de Cxty para Sample.maxValue(), y razona si según ese valor
+estamos siendo eficientes y efectivos (no debes tener en cuenta que Cxty es una cota máxima).
+Significa que hay 4 caminos independientes para recorrer cada línea de código.
+Es efectivo ya que es <= 10 y es eficiente porque es claro y no es complejo.
+
+· Observa cuáles son los valores de cobertura para Sample.isValid(). Teniendo en cuenta que el
+código de maxValue() contiene la sentencia"if (isValid(data))" razona por qué en el informe de
+cobertura no se recorre esa línea.
+Tiene valor de cobertura 0% para el método Sample.isValid().
+No tiene valor de cobertura porque en todos los tests tiene un valor de array válido. No nulo o de longitud 0.
+Si se añade un test que tenga como entrada un array nulo se recorre un 16% de branches.
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+E) ¿Cuál es la cobertura de condiciones+decisiones a nivel de proyecto al solo ejecutar los test unitarios?
+El informe resulta con 9 of 28 Missed Branches.
+Para solucionarlo necesitamos completar las 2 líneas de cada metodo que nos hemos saltado (exceptuando maxValue)
+Hay que implementar test nuevos para cubrir las vertientes V/F, se han implementado:
+    - 3 tests en countValues => array vacio, valor > max, valor < min
+    - 3 tests en isValid => array vacio, valor > max, valor < min
+
+· Viendo el informe, ¿cuántos tests como máximo te harán falta para eso?
+Como máximo harían falta 9 tests para cubrir las 9 ramas V/F => 9 of 28 branches missed.
+Hicieron falta 6.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+F) Razona por qué todos los valores de cobertura para el método countValues es cero.
+Porque no hay ninguna línea donde se llame a countValues en los tests. JaCoCo mide lo que se ejecuta en los tests.
+
+¿Por qué ahora los tests unitarios no generan un informe con un 100% de cobertura de branches?
+Porque al depurar el error del data == null se ha introducido 2 vertientes V/F en el if
+por lo que si ocurre la segunda la parte de abajo del else en el while no funciona por eso baja la cobertura.
+Si se elimina el data.length == 0 del if se consigue el 100% de nuevo.

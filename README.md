@@ -1,2 +1,2 @@
-# ppss-2025-G8-martinez-santa
-Repositorio para subir las prácticas de PPSS 2024-2025
+# Testing-Java
+Prácticas realizadas con herramientas de testing en la asignatura PPSS de la Universidad de Alicante. Curso 2024-2025.
